@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.peter.domain">
+	<class name="Role" table="role_p" dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="role_id">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="remark" column="remark"></property>
+		<property name="orderNo" column="order_no"></property>
+		<property name="createBy" column="create_by"></property>
+		<property name="createDept" column="create_dept"></property>
+		<property name="createTime" column="create_time"></property>
+		<property name="updateBy" column="update_by"></property>
+		<property name="updateTime" column="update_time"></property>
+		<set name="users" table="role_user_p">
+			<key column="role_id"></key>
+			<many-to-many class="User" column="user_id"></many-to-many>
+		</set>
+		<set name="modules" table="role_module_p">
+			<key column="role_id"></key>
+			<many-to-many class="Module" column="MODULE_ID"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

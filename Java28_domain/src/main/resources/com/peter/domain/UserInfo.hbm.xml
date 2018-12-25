@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.peter.domain">
+	<class name="UserInfo" table="user_info_p"  dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="user_info_id">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="joinDate" column="join_date"></property>
+		<property name="salary" column="salary"></property>
+		<property name="birthday" column="birthday"></property>
+		<property name="gender" column="gender"></property>
+		<property name="station" column="station"></property>
+		<property name="telephone" column="telephone"></property>
+		<property name="degree" column="degree"></property>
+		<property name="remark" column="remark"></property>
+		<property name="orderNo" column="order_No"></property>
+		<property name="createBy" column="create_by"></property>
+		<property name="createDept" column="create_dept"></property>
+		<property name="createTime" column="create_time"></property>
+		<property name="updateBy" column="update_by"></property>
+		<property name="updateTime" column="update_time"></property>
+		
+		<many-to-one name="manager" class="User" column="manager_id"></many-to-one>
+	</class>
+</hibernate-mapping>
