@@ -295,4 +295,12 @@
 	</pluginManagement>
   </build>
 
+	<modules>
+		<module>Java28_web</module>
+		<module>Java28_dao</module>
+		<module>Java28_domain</module>
+		<module>Java28_exception</module>
+		<module>Java28_service</module>
+		<module>Java28_utils</module>
+	</modules>
 </project>
