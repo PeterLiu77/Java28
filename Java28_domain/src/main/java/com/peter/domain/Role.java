@@ -11,7 +11,7 @@ public class Role extends BaseEntity
 	private String remark;
 	private Integer orderNo;
 	private Set<User> users = new HashSet<>();//角色用户多对多
-	private Set<User> modules = new HashSet<>();//角色模块多对多
+	private Set<Module> modules = new HashSet<>();//角色模块多对多
 	public String getId() {
 		return id;
 	}
@@ -42,10 +42,10 @@ public class Role extends BaseEntity
 	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
-	public Set<User> getModules() {
+	public Set<Module> getModules() {
 		return modules;
 	}
-	public void setModules(Set<User> modules) {
+	public void setModules(Set<Module> modules) {
 		this.modules = modules;
 	}
 }

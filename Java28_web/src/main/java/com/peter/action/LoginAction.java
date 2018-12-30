@@ -1,6 +1,11 @@
 package com.peter.action;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import com.peter.domain.User;
 import com.peter.utils.SysConstant;
+import com.peter.utils.UtilFuns;
 
 /**
  * @Description: 登录和退出类
@@ -34,8 +39,25 @@ public class LoginAction extends BaseAction {
 //		}
 //		return "login";
 		
+		if(UtilFuns.isEmpty(username)) {
+			return "login";
+		}
 		
-		
+		try {
+			//1.得到subject
+			Subject subject = SecurityUtils.getSubject();
+			//2.调用登录方法
+			UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+			subject.login(token); //当这一行代码执行时，就会自动跳入到authrealm的认证方法
+			//3.登陆成功时就去除登录信息
+			User user = (User) subject.getPrincipal();
+			session.put(SysConstant.CURRENT_USER_INFO, user);
+		} catch (Exception e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+			request.put("errorInfo", "对不起，用户名密码错误!");
+			return "login";
+		}
 		return SUCCESS;
 	}
 	

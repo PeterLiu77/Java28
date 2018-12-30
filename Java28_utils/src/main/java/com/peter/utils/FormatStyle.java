@@ -12,12 +12,14 @@ public class FormatStyle {
 
 	public String fileSize(String s1) {
 		int iPos = 0;
+		@SuppressWarnings("unused")
 		String s ="";
 		StringBuffer sBuf = new StringBuffer();
 		try{
 			if(s1.trim().compareTo("")==0){
 				return "";
 			}
+			@SuppressWarnings("unused")
 			long g = Long.parseLong("1099511627776");//数字太大，JAVA直接写会无法识别，会引起下面比较失败
 			//int i = Integer.parseInt(s1);
 			double i = Double.parseDouble(s1);

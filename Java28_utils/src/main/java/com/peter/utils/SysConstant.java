@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
  * 系统全局常量配置类
  */
 public class SysConstant {
+	@SuppressWarnings("unused")
 	private static Logger log = Logger.getLogger(SysConstant.class);
 
 	public static String CURRENT_USER_INFO = "_CURRENT_USER";	//当前用户session name
