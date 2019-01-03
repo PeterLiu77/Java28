@@ -82,8 +82,6 @@
   </div>
   
 <%-- <div>
-
-
 <div style="text-align:left">
 	<c:forEach items="${moduleList}" var="o">
 		<div style="padding:3px;">
@@ -94,13 +92,13 @@
 		</div>
 	</c:forEach>
 </div>
- 
 </div> --%>
+
 <div>  
 	<ul id="jkTree" class="ztree"></ul>  
 </div>
- 
- 
+
+
 </form>
 </body>
 </html>

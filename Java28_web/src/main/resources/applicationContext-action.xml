@@ -20,9 +20,11 @@
 	<bean id="userAction" class="com.peter.action.sysadmin.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 		<property name="deptService" ref="deptService"></property>
+		<property name="roleService" ref="roleService"></property>
 	</bean>
 	<bean id="roleAction" class="com.peter.action.sysadmin.RoleAction" scope="prototype">
 		<property name="roleService" ref="roleService"></property>
+		<property name="moduleService" ref="moduleService"></property>
 	</bean>
 	<bean id="moduleAction" class="com.peter.action.sysadmin.ModuleAction" scope="prototype">
 		<property name="moduleService" ref="moduleService"></property>

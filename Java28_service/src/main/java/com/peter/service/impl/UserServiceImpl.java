@@ -7,7 +7,9 @@ import java.util.UUID;
 import com.peter.dao.BaseDao;
 import com.peter.domain.User;
 import com.peter.service.UserService;
+import com.peter.utils.Encrypt;
 import com.peter.utils.Page;
+import com.peter.utils.SysConstant;
 import com.peter.utils.UtilFuns;
 
 public class UserServiceImpl implements UserService
@@ -35,6 +37,8 @@ public class UserServiceImpl implements UserService
 			String id = UUID.randomUUID().toString();
 			entity.setId(id);
 			entity.getUserInfo().setId(id);
+			//添加密码
+			entity.setPassword(Encrypt.md5(SysConstant.DEFAULT_PASS, entity.getUserName()));
 		}
 		baseDao.saveOrUpdate(entity);
 	}

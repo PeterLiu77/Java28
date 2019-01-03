@@ -19,7 +19,7 @@
 		<one-to-one name="userInfo" class="UserInfo" cascade="all"></one-to-one>
 		<set name="roles" table="role_user_p">
 			<key column="user_id"></key>
-			<many-to-many class="Role" column="role_id"></many-to-many>
+			<many-to-many class="Role" column="role_id" order-by="order_no"></many-to-many>
 		</set>
 	</class>
 </hibernate-mapping>

@@ -5,7 +5,7 @@
 <hibernate-mapping package="com.peter.domain">
 	<class name="Role" table="role_p" dynamic-insert="true" dynamic-update="true">
 		<id name="id" column="role_id">
-			<generator class="uuid"></generator>
+			<generator class="assigned"></generator>
 		</id>
 		<property name="name" column="name"></property>
 		<property name="remark" column="remark"></property>
@@ -21,7 +21,7 @@
 		</set>
 		<set name="modules" table="role_module_p">
 			<key column="role_id"></key>
-			<many-to-many class="Module" column="MODULE_ID"></many-to-many>
+			<many-to-many class="Module" column="MODULE_ID" order-by="order_no"></many-to-many>
 		</set>
 	</class>
 </hibernate-mapping>

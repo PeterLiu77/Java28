@@ -7,7 +7,11 @@
 	<script src="${ctx}/components/pngfix/DD_belatedPNG.js"></script>
 	<script> DD_belatedPNG.fix('*'); </script>
 </head>
-
+<script type="text/javascript">
+	if(self.location!=top.location){
+		top.location=self.location
+	}
+</script>
 <body>
 <form id="login_main" method="post">
 <div id="png">
