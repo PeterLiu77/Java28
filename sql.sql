@@ -32,7 +32,7 @@ CREATE TABLE `contract_c` (
   `CUSTOM_NAME` varchar(200) default NULL,
   `SHIP_TIME` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `IMPORT_NUM` int(11) default NULL COMMENT '打印时标识几个星,对应说明中的内容\r\n            不能存储特殊字符星星，jstl判断失效',
-  `DELIVERY_PERIOD` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `DELIVERY_PERIOD` timestamp NOT NULL default '2019-01-01 00:00:00',
   `OLD_STATE` int(11) default NULL COMMENT '归档前状态, 方便回退',
   `OUT_STATE` int(11) default NULL COMMENT '0未走货 1部分 2全部\r\n            \r\n            归档后, 其他选择合同的地方均去除.\r\n            表示合同已完成, 不论是否合同的货物是否全部真的走完, 因为有赔付等其他情况',
   `TRADE_TERMS` varchar(30) default NULL,
@@ -41,9 +41,9 @@ CREATE TABLE `contract_c` (
   `STATE` int(11) default NULL COMMENT '0草稿 1已上报待报运\r\n            \r\n            归档后, 其他选择合同的地方均去除.\r\n            表示合同已完成, 不论是否合同的货物是否全部真的走完, 因为有赔付等其他情况',
   `CREATE_BY` varchar(40) default NULL,
   `CREATE_DEPT` varchar(40) default NULL,
-  `CREATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `CREATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
   `UPDATE_BY` varchar(40) default NULL,
-  `UPDATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `UPDATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
   PRIMARY KEY  (`CONTRACT_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -122,7 +122,7 @@ CREATE TABLE `factory_c` (
   `CREATE_DEPT` varchar(40) default NULL,
   `CREATE_TIME` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `UPDATE_BY` varchar(40) default NULL,
-  `UPDATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `UPDATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
   PRIMARY KEY  (`FACTORY_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -171,7 +171,7 @@ CREATE TABLE `module_p` (
   `CREATE_DEPT` varchar(40) default NULL,
   `CREATE_TIME` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `UPDATE_BY` varchar(40) default NULL,
-  `UPDATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `UPDATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
   PRIMARY KEY  (`MODULE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -268,7 +268,7 @@ CREATE TABLE `role_p` (
   `CREATE_DEPT` varchar(40) default NULL,
   `CREATE_TIME` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `UPDATE_BY` varchar(40) default NULL,
-  `UPDATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `UPDATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
   PRIMARY KEY  (`ROLE_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -290,7 +290,7 @@ CREATE TABLE `user_p` (
   `CREATE_DEPT` varchar(40) default NULL COMMENT '登录人所属部门编号',
   `CREATE_TIME` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `UPDATE_BY` varchar(40) default NULL,
-  `UPDATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `UPDATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
   PRIMARY KEY  (`USER_ID`),
   KEY `FK95BE28DC369F7BB8` (`DEPT_ID`),
   CONSTRAINT `FK95BE28DC369F7BB8` FOREIGN KEY (`DEPT_ID`) REFERENCES `dept_p` (`DEPT_ID`)
@@ -468,7 +468,7 @@ CREATE TABLE `user_info_p` (
   `MANAGER_ID` varchar(40) default NULL,
   `JOIN_DATE` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `SALARY` decimal(8,2) default NULL,
-  `BIRTHDAY` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `BIRTHDAY` timestamp NOT NULL default '2019-01-01 00:00:00',
   `GENDER` char(1) default NULL,
   `STATION` varchar(20) default NULL,
   `TELEPHONE` varchar(100) default NULL,
@@ -477,9 +477,10 @@ CREATE TABLE `user_info_p` (
   `ORDER_NO` int(11) default NULL,
   `CREATE_BY` varchar(40) default NULL COMMENT '登录人编号',
   `CREATE_DEPT` varchar(40) default NULL COMMENT '登录人所属部门编号',
-  `CREATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `CREATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
   `UPDATE_BY` varchar(40) default NULL,
-  `UPDATE_TIME` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `UPDATE_TIME` timestamp NOT NULL default '2019-01-01 00:00:00',
+  `EMAIL` varchar(30) default NULL,
   PRIMARY KEY  (`USER_INFO_ID`),
   KEY `FK2BF43F36EB6FED6` (`MANAGER_ID`),
   CONSTRAINT `FK2BF43F36EB6FED6` FOREIGN KEY (`MANAGER_ID`) REFERENCES `user_p` (`USER_ID`)

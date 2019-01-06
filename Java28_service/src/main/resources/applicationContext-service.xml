@@ -20,6 +20,8 @@
 	
 	<bean id="userService" class="com.peter.service.impl.UserServiceImpl">
 		<property name="baseDao" ref="baseDao"></property>
+		<property name="mailMessage" ref="mailMessage"></property>
+		<property name="mailSender" ref="mailSender"></property>
 	</bean>
 	
 	<bean id="roleService" class="com.peter.service.impl.RoleServiceImpl">

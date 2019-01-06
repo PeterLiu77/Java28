@@ -22,6 +22,7 @@
 		<property name="createTime" column="create_time"></property>
 		<property name="updateBy" column="update_by"></property>
 		<property name="updateTime" column="update_time"></property>
+		<property name="email" column="email"></property>
 		
 		<many-to-one name="manager" class="User" column="manager_id"></many-to-one>
 	</class>
