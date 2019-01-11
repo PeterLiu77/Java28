@@ -8,3 +8,5 @@ Needs:
 	jdk-7u51-windows-x64
 	Navicat 11
 	MySQL 5.5.28
+
+Gook Luck！
