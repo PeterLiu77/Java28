@@ -9,4 +9,4 @@ Needs:
 	Navicat 11
 	MySQL 5.5.28
 
-Gook Luck！
+Gook Luck！！
