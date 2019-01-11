@@ -32,4 +32,20 @@
 		<property name="baseDao" ref="baseDao"></property>
 	</bean>
 	
+	<bean id="contractProductService" class="com.peter.service.impl.ContractProductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="contractService" class="com.peter.service.impl.ContractServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="extCproductService" class="com.peter.service.impl.ExtCproductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="factoryService" class="com.peter.service.impl.FactoryServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
 </beans>

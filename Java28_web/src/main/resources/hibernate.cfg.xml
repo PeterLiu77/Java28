@@ -24,5 +24,11 @@
 		<mapping resource="com/peter/domain/Role.hbm.xml"></mapping>
 		<mapping resource="com/peter/domain/UserInfo.hbm.xml"></mapping>
 		<mapping resource="com/peter/domain/Module.hbm.xml"></mapping>
+		
+		<mapping resource="com/peter/domain/Contract.hbm.xml"></mapping>
+		<mapping resource="com/peter/domain/ContractProduct.hbm.xml"></mapping>
+		<mapping resource="com/peter/domain/Factory.hbm.xml"></mapping>
+		<mapping resource="com/peter/domain/ExtCproduct.hbm.xml"></mapping>
+		
 	</session-factory>
 	</hibernate-configuration>
